@@ -2,7 +2,7 @@ package java_telegram_bot.models;
 
 public class User
 {
-    private int userId;
+    private long userId;
     private int isBot;
     private String firstname;
     private String lastname;
@@ -51,7 +51,7 @@ public class User
         this.userLongitude = userLongitude;
     }
 
-    public int getUserId()
+    public long getUserId()
     {
         return userId;
     }
