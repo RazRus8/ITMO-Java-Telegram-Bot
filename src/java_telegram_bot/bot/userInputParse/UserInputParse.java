@@ -64,13 +64,9 @@ public class UserInputParse
 
             return message;
         }
-        else if (command.equals("/stop"))
-        {
-            return "Command /stop is under development now.";
-        }
         else
         {
-            return "Unknown command, try again.";
+            return "Looks like this command is unknown.\nTry another command.";
         }
     }
 
