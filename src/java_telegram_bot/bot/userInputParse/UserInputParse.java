@@ -32,23 +32,23 @@ public class UserInputParse
 
             message = "Share your location to get current weather forecast and subscribe for daily weather forecast.";
 
-            if (db.DBSelectUser(userId) == null)
+            if (db.SelectUser(userId) == null)
             {
                 // to do: make async work with DB
-                db.DBInsertUser(user);
+                db.InsertUser(user);
             }
 
             return message;
         }
         else if (command.equals("/subscribe"))
         {
-            if ((db.DBSelectUser(userId).getUserLatitude() != 0) && (db.DBSelectUser(userId).getUserLongitude() != 0))
+            if ((db.SelectUser(userId).getUserLatitude() != 0) && (db.SelectUser(userId).getUserLongitude() != 0))
             {
                 message = "Now you have a subscription for daily weather forecast for your location. " +
                         "\nYou will receive it every day at 7 am." +
                         "\nTo change location share it and subscribe once again.";
 
-                db.DBUpdateSubs(1, userId);
+                db.UpdateSubs(1, userId);
             }
             else
             {
@@ -60,7 +60,7 @@ public class UserInputParse
         else if (command.equals("/unsubscribe"))
         {
             message = "You no longer have a subscription.";
-            db.DBUpdateSubs(0, userId);
+            db.UpdateSubs(0, userId);
 
             return message;
         }
@@ -83,7 +83,7 @@ public class UserInputParse
 
         String message = WeatherInfo.currentInfo(currentWeather) + "\n\n" + WeatherInfo.dailyInfo(dailyWeather);
 
-        db.DBUpdateUserLoc(userId, latitude, longitude);
+        db.UpdateUserLoc(userId, latitude, longitude);
 
         return message;
     }
