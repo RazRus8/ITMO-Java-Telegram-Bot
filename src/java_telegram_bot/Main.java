@@ -6,10 +6,7 @@ import org.telegram.telegrambots.ApiContextInitializer;
 import org.telegram.telegrambots.meta.TelegramBotsApi;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import java_telegram_bot.bot.Bot;
-
 import java_telegram_bot.security.Security;
-
-//
 import java_telegram_bot.schedule.Schedule;
 
 public class Main
@@ -45,20 +42,3 @@ public class Main
         scheduler.scheduleJob(job, trigger);
     }
 }
-
-/*
-new Thread(() -> {
-output = UserInputParse.parseLocation(update, location);
-message.setText(output);
-execute(message);
-}).start();
-
-Executor executor = Executors.newFixedThreadPool(8);
-executor.execute(() -> {
-output = UserInputParse.parseLocation(update, location);
-message.setText(output);
-execute(message);
-});
-
-
- */
