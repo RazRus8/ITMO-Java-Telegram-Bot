@@ -17,6 +17,7 @@ public class UserInputParse
     private static String key = Security.getInstance().getApiKey();
     private static String message;
 
+    // returns message to user's command
     public static String parseCommand(Update update, String command)
     {
         int userId = update.getMessage().getFrom().getId();
@@ -70,6 +71,7 @@ public class UserInputParse
         }
     }
 
+    // returns message to user's location
     public static String parseLocation(Update update, Location location)
     {
         int userId = update.getMessage().getFrom().getId();
