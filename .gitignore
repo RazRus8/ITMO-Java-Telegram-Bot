@@ -3,13 +3,11 @@
 *.ipr
 *.iws
 .idea
-libraries
 out
 
 
 #Libraries and other files
 *.png
 *.iml
-*.dll
 src/java_telegram_bot/Info.java
 
